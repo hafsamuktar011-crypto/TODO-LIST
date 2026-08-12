@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaPlusCircle } from "react-icons/fa";
 import { FcNeutralDecision } from "react-icons/fc";
 function ToDoList() {
+         const[OpenNewNote,setOpenNewNote]=useState(false)
+
+         
 
   return (
+    
     <section className='relative flex flex-col items-center mt-10'>
         <img src="/images/empty-todo.png" alt="" 
         className='flex justify-center items-center '/>
