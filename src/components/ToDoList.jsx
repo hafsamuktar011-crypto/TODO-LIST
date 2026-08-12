@@ -1,10 +1,11 @@
 import React from 'react'
-
+import { FaPlusCircle } from "react-icons/fa";
 function ToDoList() {
   return (
-    <div>
-      
-    </div>
+    <section>
+        <img src="/images/empty-todo.png" alt="" />
+      <FaPlusCircle />
+    </section>
   )
 }
 
