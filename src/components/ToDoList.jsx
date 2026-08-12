@@ -29,7 +29,7 @@ function ToDoList() {
          )}
          {!OpenNewNote && (
             <>
-             <img src="/images/empty-todo.png" alt="" 
+             <img src="/images/Detective-check-footprint 1.png" alt="" 
         className='flex justify-center items-center '/>
         <div className='flex items-center px-1 m-2 '>
          <p>it is empty lazy boy!!</p>
