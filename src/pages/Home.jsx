@@ -20,8 +20,8 @@ function Home() {
     <div
       className={
         brightMode
-          ? "bg-[var(--bright-bg)] min-h-screen text-[var(--bright-text)]"
-          : "bg-[var(--bg)] min-h-screen h-screen"
+          ? "bg-[var(--bright-bg)] min-h-screen text-[var(--bright-text)] "
+          : "bg-[var(--bg)] min-h-screen h-screen "
       }
     >
       <h1 className="text-center pt-16 pb-16">
@@ -38,6 +38,7 @@ function Home() {
         openNewNote={openNewNote}
         setOpenNewNote={setOpenNewNote}
         addTodo={addTodo}
+        brightMode={brightMode}
       />
 
       <ToDoItems todos={todos} />

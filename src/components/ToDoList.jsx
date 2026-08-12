@@ -3,7 +3,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import { FcNeutralDecision } from "react-icons/fc";
 import ToDoItems from './ToDoItems';
 
-function ToDoList({openNewNote,setOpenNewNote,addTodo}) {
+function ToDoList({openNewNote,setOpenNewNote,addTodo ,brightMode}) {
          const [note, setNote] = useState("");
          const [alarm, setAlarm] = useState("");
 
@@ -18,14 +18,15 @@ function ToDoList({openNewNote,setOpenNewNote,addTodo}) {
          
            setOpenNewNote(false);
          };
-         
+
 
   return (
     <section className='relative flex flex-col items-center mt-10'>
 
       {!openNewNote && (
         <>
-          <img src="/images/Detective-check-footprint 1.png" alt="" 
+          <img src={brightMode ? "/images/Detective-check-footprint.png" 
+            : "images/Detective-check-footprint-dark.png"} 
             className='flex justify-center items-center '/>
           <div className='flex items-center px-1 m-2 '>
             <p>it is empty lazy boy!!</p>
@@ -35,8 +36,10 @@ function ToDoList({openNewNote,setOpenNewNote,addTodo}) {
       )}
        
       {openNewNote && (
-        <form className='w-2/3 h-full p-3 space-y-4 rounded 
-        bg-[var(--bg)] outline-2 outline-offset-3 outline-cyan-200'
+        <form className={` w-2/3 h-full p-3 space-y-4 rounded 
+        bg-[var(--bg)] outline-2 outline-offset-3 outline-cyan-200
+         ${ brightMode ? "bg-[var(--bright-bg)]" : "bg-[var(--bg)]" }`} 
+         
             onSubmit={handleApply}>
           <h1 className='block text-center'>NEW NOTE</h1>
           <div className='flex flex-col my-10 gap-4'>

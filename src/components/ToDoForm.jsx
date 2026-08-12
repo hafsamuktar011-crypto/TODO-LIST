@@ -8,7 +8,9 @@ function ToDoForm({ dimmed ,toggleMode,brightMode}) {
 
 
   return (
-    <section className={dimmed ? "opacity-40 pointer-events-none" : ""}>
+<section
+  className={`${dimmed ? "opacity-40 pointer-events-none" : ""}`}
+>
       <div className='flex flex-row justify-center space-x-3 mx-6 '>
         <form action="" className='relative w-full '>
           <input 
@@ -33,9 +35,9 @@ function ToDoForm({ dimmed ,toggleMode,brightMode}) {
         flex items-center justify-center "
         onClick={toggleMode}>
         {brightMode ? (
-          <MdOutlineWbSunny size={24} />
-        ) : (
           <AiFillMoon size={24} />
+        ) : (
+          <MdOutlineWbSunny size={24} />
         )}
       </button>
 
