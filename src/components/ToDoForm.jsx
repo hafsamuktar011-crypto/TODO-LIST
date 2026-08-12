@@ -13,10 +13,10 @@ function ToDoForm() {
           size={20}/>
                 </form> 
          
-          <select>
-            <option value="">All</option>
-            <option value="">Not Done</option>
-            <option value="">Done</option>
+          <select className=' bg-[var(--all-bg)] rounded-lg outline-3 outline-offset-2 outline-double outline-cyan-200'>
+            <option value="all">All</option>
+            <option value="not done">Not Done</option>
+            <option value="done">Done</option>
           </select>
           <MdOutlineWbSunny />
         </div>
