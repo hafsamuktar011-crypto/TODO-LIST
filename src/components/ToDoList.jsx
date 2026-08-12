@@ -15,7 +15,7 @@ function ToDoList() {
                 <input type="text" id="newnote" placeholder='input your note...'
                 className='rounded outline-2 outline-cyan-200 outline-offset-2 px-2
                  focus:outline-red-200 '/>
-                <input type="time" id="alarm" placeholder='set alarm'
+                <input type="time" id="alarm" placeholder='remind me'
                 className='rounded outline-2 outline-cyan-200 outline-offset-2 px-2
                 focus:outline-red-200'/>
                 </div>
