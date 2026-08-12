@@ -9,18 +9,20 @@ function ToDoList() {
     
     <section className='relative flex flex-col items-center mt-10'>
          {OpenNewNote && (
-            <form className='w-2/3 h-full p-3 space-y-4 bg-[var(--bg)] outline-2'>
+            <form className='w-2/3 h-full p-3 space-y-4 rounded bg-[var(--bg)] outline-2 outline-offset-3 outline-cyan-200'>
                 <h1 className='block text-center'>NEW NOTE</h1>
                 <div className='flex flex-col my-10 gap-4'>
                 <input type="text" id="newnote" placeholder='input your note...'
-                className='rounded outline-2 outline-cyan-200 outline-offset-2 px-2 '/>
-                <input type="number" id="alarm" placeholder='set alarm'
-                className='rounded outline-2 outline-cyan-200 outline-offset-2 px-2'/>
+                className='rounded outline-2 outline-cyan-200 outline-offset-2 px-2
+                 focus:outline-red-200 '/>
+                <input type="time" id="alarm" placeholder='set alarm'
+                className='rounded outline-2 outline-cyan-200 outline-offset-2 px-2
+                focus:outline-red-200'/>
                 </div>
              
                 <div className='flex justify-between '>
-                <button className='bg-white text-black p-2 rounded-lg'>CANCEL</button>
-                <button className='bg-white text-black p-2 rounded-lg '>APPLY</button>
+                <button className='bg-white text-black p-2 rounded-lg hover:bg-cyan-100 hover:text-cyan-900 '>CANCEL</button>
+                <button className='bg-white text-black p-2 rounded-lg hover:bg-cyan-100 hover:text-cyan-900 '>APPLY</button>
                 </div>
                
             </form>
