@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineWbSunny } from "react-icons/md";
+import { FaRegMoon } from "react-icons/fa6";
+import { AiFillMoon } from "react-icons/ai";
 
-function ToDoForm({ dimmed ,brightMode}) {
+function ToDoForm({ dimmed ,toggleMode,brightMode}) {
 
 
   return (
@@ -25,10 +27,18 @@ function ToDoForm({ dimmed ,brightMode}) {
           <option value="not done">Not Done</option>
           <option value="done">Done</option>
         </select>
-        <MdOutlineWbSunny
-          className={`h-8 w-10 -translate-y-1/6 p-2 bg-[var(--cyan)] rounded-lg flex items-center justify-center 
-            ${brightMode ? "bg-white" : "bg-[var(--bg)]"}`}
-        />
+
+        <button type='button' 
+        className="h-8 w-10 -translate-y-1/6 p-2 bg-[var(--cyan)] rounded-lg 
+        flex items-center justify-center "
+        onClick={toggleMode}>
+        {brightMode ? (
+          <MdOutlineWbSunny size={24} />
+        ) : (
+          <AiFillMoon size={24} />
+        )}
+      </button>
+
       </div>
     </section>
   )

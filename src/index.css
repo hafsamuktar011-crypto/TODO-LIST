@@ -1,10 +1,11 @@
 @import "tailwindcss";
 :root {
-  --text: #6b6375;
-  --bg: #fff;
+  /* --text: #6b6375; */
+  --bg: #16171d;
   --cyan:oklch(71.5% 0.143 215.221);
   --border: #e5e4e7;
-  --code-bg: #f4f3ec;
+  --bright-bg: #f4f3ec;
+  --bright-text: oklch(26.6% 0.065 152.934);
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
@@ -49,10 +50,9 @@ h2 {
 h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
-  margin: 32px 0;
+  margin: 0 0 40px;
   @media (max-width: 1024px) {
     font-size: 36px;
-    margin: 20px 0;
   }
 }
 h2 {
