@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineWbSunny } from "react-icons/md";
 
-function ToDoForm({ dimmed }) {
-    
+function ToDoForm({ dimmed ,brightMode}) {
 
 
   return (
@@ -27,7 +26,8 @@ function ToDoForm({ dimmed }) {
           <option value="done">Done</option>
         </select>
         <MdOutlineWbSunny
-          className="h-8 w-10 -translate-y-1/6 p-2 bg-[var(--cyan)] rounded-lg flex items-center justify-center"
+          className={`h-8 w-10 -translate-y-1/6 p-2 bg-[var(--cyan)] rounded-lg flex items-center justify-center 
+            ${brightMode ? "bg-white" : "bg-[var(--bg)]"}`}
         />
       </div>
     </section>
