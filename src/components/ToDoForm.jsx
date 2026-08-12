@@ -9,16 +9,18 @@ function ToDoForm() {
                  <input type="text" id="todolist_input" placeholder='Search note...'
           className='outline-2 outline-offset-2 outline-cyan-500 rounded-lg w-full
           pl-3' />
-          <CiSearch className='absolute  right-2 top-1/2 -translate-y-1/2'
+          <CiSearch className='absolute  right-2 top-1/2 -translate-y-2/3'
           size={20}/>
                 </form> 
-         
-          <select className=' bg-[var(--all-bg)] rounded-lg outline-3 outline-offset-2 outline-double outline-cyan-200'>
+         <select className='h-6 bg-[var(--all-bg)] rounded-lg outline-3 outline-offset-2 outline-double outline-cyan-200'>
             <option value="all">All</option>
             <option value="not done">Not Done</option>
             <option value="done">Done</option>
           </select>
-          <MdOutlineWbSunny />
+        <MdOutlineWbSunny
+         className="h-8 w-10 -translate-y-1/6 p-2 bg-[var(--accent-border)] rounded-lg flex items-center justify-center"
+         />
+          
         </div>
       
     </section>
