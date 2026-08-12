@@ -4,7 +4,9 @@ import { FcNeutralDecision } from "react-icons/fc";
 function ToDoList() {
          const[OpenNewNote,setOpenNewNote]=useState(false)
 
-         
+         const open=()=>{
+
+         }
 
   return (
     
@@ -16,7 +18,8 @@ function ToDoList() {
         <FcNeutralDecision />
         </div>
         
-      <FaPlusCircle className='absolute top-100 right-9 -translate-y-1/6' />
+      <FaPlusCircle className='absolute top-100 right-9 -translate-y-1/6' 
+      onClick={()=>setOpenNewNote(true)}/>
     </section>
   )
 }
