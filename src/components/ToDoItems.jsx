@@ -1,26 +1,78 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { FaPenFancy } from "react-icons/fa6";
 import { AiFillDelete } from "react-icons/ai";
 
-      {/* displays one todo, with things like delete/edit/complete. */}
-function ToDoItems({ todos }) {
+function ToDoItems({ todos, setTodos }) {
+  const [editingId, setEditingId] = useState(null);
+  const [editNote, setEditNote] = useState("");
+
+  const handleEdit = (todo) => {
+    setEditingId(todo.id);
+    setEditNote(todo.note);
+  };
+
+  const handleUpdate = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id
+          ? { ...todo, note: editNote }
+          : todo
+      )
+    );
+
+    setEditingId(null);
+  };
+
+  const handleDelete = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.filter((todo) => todo.id !== id)
+    );
+  };
+
   return (
     <div>
-      {todos.map((todo, index) => (
+      {todos.map((todo) => (
         <div
-          key={index}
+          key={todo.id}
           className="border-b border-cyan-200 mx-50 p-3"
         >
-          <div className=" flex flex-row justify-between gap-3">
-          <div className='flex flex-row gap-20'>
-              <span>{todo.note}</span>
-            <span>{todo.alarm}</span>
-          </div>
-          <div className='flex justify-end'>
-            <FaPenFancy />
-            <AiFillDelete />
-          </div>
-            
+          <div className="flex flex-row justify-between gap-3">
+
+            {editingId === todo.id ? (
+              <div className="flex gap-3">
+                <input
+                  type="text"
+                  value={editNote}
+                  onChange={(e) => setEditNote(e.target.value)}
+                  className="rounded px-2 outline-2 outline-cyan-200"
+                />
+
+                <button
+                  onClick={() => handleUpdate(todo.id)}
+                  className="bg-white text-black px-3 rounded"
+                >
+                  SAVE
+                </button>
+              </div>
+            ) : (
+              <div className="flex flex-row gap-20">
+                <span>{todo.note}</span>
+                <span>{todo.alarm}</span>
+              </div>
+            )}
+
+            <div className="flex justify-end gap-2">
+              <FaPenFancy
+                onClick={() => handleEdit(todo)}
+                className="cursor-pointer"
+              />
+
+              <AiFillDelete
+                onClick={() => handleDelete(todo.id)}
+                className="cursor-pointer"
+              />
+            </div>
+
           </div>
         </div>
       ))}
@@ -28,4 +80,4 @@ function ToDoItems({ todos }) {
   );
 }
 
-export default ToDoItems
+export default ToDoItems;

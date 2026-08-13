@@ -13,6 +13,7 @@ function ToDoList({openNewNote,setOpenNewNote,addTodo ,brightMode}) {
            e.preventDefault();
          
            addTodo({
+            id:Date.now(),
              note,
              alarm
            });
