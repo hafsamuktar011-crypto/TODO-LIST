@@ -9,15 +9,18 @@ function ToDoItems({ todos }) {
       {todos.map((todo, index) => (
         <div
           key={index}
-          className="border-b border-cyan-200 lg:mx-50 "
+          className="border-b border-cyan-200 mx-50 p-3"
         >
-          <div className=" flex flex-row items-center justify-end gap-3">
+          <div className=" flex flex-row justify-between gap-3">
           <div className='flex flex-row gap-20'>
               <span>{todo.note}</span>
             <span>{todo.alarm}</span>
           </div>
+          <div className='flex justify-end'>
             <FaPenFancy />
             <AiFillDelete />
+          </div>
+            
           </div>
         </div>
       ))}

@@ -6,6 +6,7 @@ import ToDoItems from './ToDoItems';
 function ToDoList({openNewNote,setOpenNewNote,addTodo ,brightMode}) {
          const [note, setNote] = useState("");
          const [alarm, setAlarm] = useState("");
+         const [showEmptyImage,setShowEmptyImage]=useState(true)
 
 
          const handleApply = (e) => {
@@ -17,16 +18,18 @@ function ToDoList({openNewNote,setOpenNewNote,addTodo ,brightMode}) {
            });
          
            setOpenNewNote(false);
+           setShowEmptyImage(false)
          };
 
 
   return (
     <section className='relative flex flex-col items-center mt-10'>
 
-      {!openNewNote && (
+      {!openNewNote && showEmptyImage && (
         <>
           <img src={brightMode ? "/images/Detective-check-footprint.png" 
-            : "images/Detective-check-footprint-dark.png"} 
+            : "images/Detective-check-footprint-dark.png"
+             } 
             className='flex justify-center items-center '/>
           <div className='flex items-center px-1 m-2 '>
             <p>it is empty lazy boy!!</p>
