@@ -24,10 +24,11 @@ function ToDoForm({ dimmed ,toggleMode,brightMode}) {
             size={20}
           />
         </form> 
-        <select className='h-6 rounded-lg outline-3 outline-offset-2 outline-double outline-cyan-200'>
-          <option value="all">All</option>
-          <option value="not done">Not Done</option>
-          <option value="done">Done</option>
+        <select className='h-6 rounded-lg outline-3
+         outline-offset-2 outline-double outline-cyan-200'>
+          <option value="all" className='bg-red-200 text-black'>All</option>
+          <option value="not done" className='bg-red-200 text-black'>Not Done</option>
+          <option value="done" className='bg-red-200 text-black'>Done</option>
         </select>
 
         <button type='button' 
