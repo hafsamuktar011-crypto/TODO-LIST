@@ -38,7 +38,7 @@ function ToDoList({openNewNote,setOpenNewNote,addTodo ,brightMode}) {
       {openNewNote && (
         <form className={` w-2/3 h-full p-3 space-y-4 rounded 
         bg-[var(--bg)] outline-2 outline-offset-3 outline-cyan-200
-         ${ brightMode ? "bg-[var(--bright-bg)]" : "bg-[var(--bg)]" }`} 
+         ${ brightMode ? "bg-[var(--bright-bg)] text-[var(--bright-text)] outline-7 outline-offset-7" : "bg-[var(--bg)]" }`} 
          
             onSubmit={handleApply}>
           <h1 className='block text-center'>NEW NOTE</h1>
