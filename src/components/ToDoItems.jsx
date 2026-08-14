@@ -36,7 +36,17 @@ const handleToggleDone = (id) => {
       prevTodos.filter((todo) => todo.id !== id)
     );
   };
+  const filteredTodos = todos.filter((todo) => {
+  if (filter === "done") {
+    return todo.done === true;
+  }
 
+  if (filter === "not done") {
+    return todo.done === false;
+  }
+
+  return true;
+});
   return (
     <div>
       {todos.map((todo) => (
