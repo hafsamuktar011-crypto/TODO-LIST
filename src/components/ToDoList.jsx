@@ -15,7 +15,8 @@ function ToDoList({openNewNote,setOpenNewNote,addTodo ,brightMode}) {
            addTodo({
             id:Date.now(),
              note,
-             alarm
+             alarm,
+             done:false
            });
          
            setOpenNewNote(false);

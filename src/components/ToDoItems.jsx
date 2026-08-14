@@ -10,7 +10,15 @@ function ToDoItems({ todos, setTodos }) {
     setEditingId(todo.id);
     setEditNote(todo.note);
   };
-
+const handleToggleDone = (id) => {
+  setTodos((prevTodos) =>
+    prevTodos.map((todo) =>
+      todo.id === id
+        ? { ...todo, done: !todo.done }
+        : todo
+    )
+  );
+};
   const handleUpdate = (id) => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
