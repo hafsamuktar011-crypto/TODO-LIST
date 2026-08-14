@@ -32,6 +32,8 @@ function Home() {
         dimmed={openNewNote}
         brightMode={brightMode}
         toggleMode={toggleMode}
+        filter={filter}
+        setFilter={setFilter}
       />
 
       <ToDoList
