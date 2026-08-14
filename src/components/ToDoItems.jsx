@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaPenFancy } from "react-icons/fa6";
 import { AiFillDelete } from "react-icons/ai";
-
+import { FaCheck } from "react-icons/fa";
 function ToDoItems({ todos, setTodos }) {
   const [editingId, setEditingId] = useState(null);
   const [editNote, setEditNote] = useState("");
@@ -56,6 +56,7 @@ function ToDoItems({ todos, setTodos }) {
               </div>
             ) : (
               <div className="flex flex-row gap-20">
+                <FaCheck className="w-8 h-8  outline-2 outline-cyan-200 "/>
                 <span>{todo.note}</span>
                 <span>{todo.alarm}</span>
               </div>
