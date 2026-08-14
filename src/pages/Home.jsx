@@ -45,6 +45,7 @@ function Home() {
 
       <ToDoItems todos={todos} 
       setTodos={setTodos}
+       filter={filter}
       />
     </div>
   );
