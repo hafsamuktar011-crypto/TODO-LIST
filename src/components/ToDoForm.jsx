@@ -26,6 +26,7 @@ function ToDoForm({ dimmed ,toggleMode,brightMode,filter,setFilter}) {
         </form> 
         <select
         value={filter} 
+        onChange={(e)=>setFilter(e.target.value)}
         className='h-6 rounded-lg outline-3
          outline-offset-2 outline-double outline-cyan-200'>
           <option value="all" className='bg-red-200 text-black'>All</option>
