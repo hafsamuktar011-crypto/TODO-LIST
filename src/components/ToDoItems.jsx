@@ -49,7 +49,7 @@ const handleToggleDone = (id) => {
 });
   return (
     <div>
-      {todos.map((todo) => (
+      {filteredTodos.map((todo) => (
         <div
           key={todo.id}
           className="border-b border-cyan-200 mx-50 p-3"
