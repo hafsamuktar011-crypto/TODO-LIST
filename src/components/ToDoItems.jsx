@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaPenFancy } from "react-icons/fa6";
 import { AiFillDelete } from "react-icons/ai";
 import { FaCheck } from "react-icons/fa";
-function ToDoItems({ todos, setTodos }) {
+function ToDoItems({ todos, setTodos ,filter}) {
   const [editingId, setEditingId] = useState(null);
   const [editNote, setEditNote] = useState("");
 
