@@ -24,7 +24,9 @@ function ToDoForm({ dimmed ,toggleMode,brightMode,filter,setFilter}) {
             size={20}
           />
         </form> 
-        <select className='h-6 rounded-lg outline-3
+        <select
+        value={filter} 
+        className='h-6 rounded-lg outline-3
          outline-offset-2 outline-double outline-cyan-200'>
           <option value="all" className='bg-red-200 text-black'>All</option>
           <option value="not done" className='bg-red-200 text-black'>Not Done</option>
