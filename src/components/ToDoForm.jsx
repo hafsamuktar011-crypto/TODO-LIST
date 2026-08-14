@@ -4,7 +4,7 @@ import { MdOutlineWbSunny } from "react-icons/md";
 import { FaRegMoon } from "react-icons/fa6";
 import { AiFillMoon } from "react-icons/ai";
 
-function ToDoForm({ dimmed ,toggleMode,brightMode}) {
+function ToDoForm({ dimmed ,toggleMode,brightMode,filter,setFilter}) {
 
 
   return (
