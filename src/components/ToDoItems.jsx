@@ -5,7 +5,6 @@ import { FaCheck } from "react-icons/fa";
 function ToDoItems({ todos, setTodos ,filter}) {
   const [editingId, setEditingId] = useState(null);
   const [editNote, setEditNote] = useState("");
-  // const [isChecked,setIschecked]=useState(false)
 
   const handleEdit = (todo) => {
     setEditingId(todo.id);
