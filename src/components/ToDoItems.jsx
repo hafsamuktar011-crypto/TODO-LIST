@@ -5,6 +5,7 @@ import { FaCheck } from "react-icons/fa";
 function ToDoItems({ todos, setTodos ,filter}) {
   const [editingId, setEditingId] = useState(null);
   const [editNote, setEditNote] = useState("");
+  const [isChecked,setIschecked]=useState(false)
 
   const handleEdit = (todo) => {
     setEditingId(todo.id);
@@ -73,8 +74,11 @@ const handleToggleDone = (id) => {
                 </button>
               </div>
             ) : (
-              <div className="flex flex-row gap-20">
-                <FaCheck className="w-8 h-8  outline-2 outline-cyan-200 "/>
+              <div className="flex flex-row gap-20 items-center">
+                <div onClick={()=>setIschecked(!isChecked)}
+                  className="cursor-pointer">
+                  {isChecked ? ( <FaCheck className="w-7 h-7 outline-2 outline-cyan-300 "/>) :(  <div class="w-7 h-7 outline-2 outline-cyan-300"></div>) }
+                </div>
                 <span>{todo.note}</span>
                 <span>{todo.alarm}</span>
               </div>
