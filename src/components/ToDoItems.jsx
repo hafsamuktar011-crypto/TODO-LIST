@@ -52,7 +52,7 @@ const handleToggleDone = (id) => {
       {filteredTodos.map((todo) => (
         <div
           key={todo.id}
-          className="border-b border-cyan-200 mx-50 p-3"
+          className="border-b border-cyan-300 mx-50 p-3"
         >
           <div className="flex flex-row justify-between gap-3">
 
