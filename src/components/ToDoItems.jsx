@@ -5,7 +5,7 @@ import { FaCheck } from "react-icons/fa";
 function ToDoItems({ todos, setTodos ,filter}) {
   const [editingId, setEditingId] = useState(null);
   const [editNote, setEditNote] = useState("");
-  const [isChecked,setIschecked]=useState(false)
+  // const [isChecked,setIschecked]=useState(false)
 
   const handleEdit = (todo) => {
     setEditingId(todo.id);
@@ -74,22 +74,24 @@ const handleToggleDone = (id) => {
                 </button>
               </div>
             ) : (
-              <div className="flex flex-col gap-20 items-center">
-  <span
-    onClick={() => setIsChecked(!isChecked)}
-    className="cursor-pointer flex items-center gap-2"
-  >
-    {isChecked ? (
-      <FaCheck className="w-7 h-7 text-cyan-600" />
-    ) : (
-      <div className="w-7 h-7 outline outline-2 outline-cyan-300"></div>
-    )}
-    <span className={isChecked ? "line-through" : ""}>{todo.note}</span>
-  </span>
+              <div className="flex flex-row items-center gap-3">
+               <span
+                 onClick={() => handleToggleDone(todo.id)}
+                 className="cursor-pointer"
+               >
+                 {todo.done ? (
+                   <FaCheck className="w-7 h-7 outline-2 outline-cyan-300" />
+                 ) : (
+                   <div className="w-7 h-7 outline-2 outline-cyan-300"></div>
+                 )}
+               </span>
+             
+               <span className={todo.done ? "line-through" : ""}>
+                 {todo.note}
+               </span>
 
-  <span className={isChecked ? "line-through" : ""}>{todo.alarm}</span>
-</div>
-
+                <span>{todo.alarm}</span>
+                </div>
             )}
 
             <div className="flex justify-end gap-2">
