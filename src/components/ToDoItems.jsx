@@ -74,14 +74,22 @@ const handleToggleDone = (id) => {
                 </button>
               </div>
             ) : (
-              <div className="flex flex-row gap-20 items-center">
-                <div onClick={()=>setIschecked(!isChecked)}
-                  className="cursor-pointer">
-                  {isChecked ? ( <FaCheck className="w-7 h-7 outline-2 outline-cyan-300 "/>) :(  <div class="w-7 h-7 outline-2 outline-cyan-300"></div>) }
-                </div>
-                <span>{todo.note}</span>
-                <span>{todo.alarm}</span>
-              </div>
+              <div className="flex flex-col gap-20 items-center">
+  <span
+    onClick={() => setIsChecked(!isChecked)}
+    className="cursor-pointer flex items-center gap-2"
+  >
+    {isChecked ? (
+      <FaCheck className="w-7 h-7 text-cyan-600" />
+    ) : (
+      <div className="w-7 h-7 outline outline-2 outline-cyan-300"></div>
+    )}
+    <span className={isChecked ? "line-through" : ""}>{todo.note}</span>
+  </span>
+
+  <span className={isChecked ? "line-through" : ""}>{todo.alarm}</span>
+</div>
+
             )}
 
             <div className="flex justify-end gap-2">
