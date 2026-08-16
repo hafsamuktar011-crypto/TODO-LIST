@@ -38,17 +38,19 @@ const handleToggleDone = (id) => {
   };
 
 {/*  decides what to display  */}
-  const filteredTodos = todos.filter((todo) => {
-  if (filter === "done") {
-    return todo.done === true;
-  }
+ const filteredTodos = todos.filter((todo) => {
+  const matchesSearch = todo.note
+    .toLowerCase()
+    .includes(search.toLowerCase());
 
-  if (filter === "not done") {
-    return todo.done === false;
-  }
+  const matchesFilter =
+    filter === "all" ||
+    (filter === "done" && todo.done === true) ||
+    (filter === "not done" && todo.done === false);
 
-  return true;
+  return matchesSearch && matchesFilter;
 });
+
   return (
     <div>
       {filteredTodos.map((todo,index) => (
