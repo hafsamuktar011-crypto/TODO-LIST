@@ -16,6 +16,7 @@ function ToDoForm({ dimmed ,toggleMode,brightMode,filter,setFilter}) {
           <input 
             type="text" 
             id="todolist_input" 
+            onChange={(e) => setSearch(e.target.value)}
             placeholder='Search note...'
             className='outline-2 outline-offset-2 outline-cyan-200 rounded-lg w-full pl-3' 
           />
