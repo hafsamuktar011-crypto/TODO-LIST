@@ -8,6 +8,7 @@ function Home() {
   const [todos, setTodos] = useState([]);
   const [brightMode, setBrightMode] = useState(false);
   const [filter, setFilter] = useState("all");
+  const [search, setSearch] = useState("");
   const toggleMode = () => {
     setBrightMode((prevMode) => !prevMode);
   };
