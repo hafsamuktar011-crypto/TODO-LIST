@@ -35,6 +35,8 @@ function Home() {
         toggleMode={toggleMode}
         filter={filter}
         setFilter={setFilter}
+        setSearch={setSearch}
+       search={search}
       />
 
       <ToDoList
