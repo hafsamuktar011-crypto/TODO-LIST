@@ -36,6 +36,8 @@ const handleToggleDone = (id) => {
       prevTodos.filter((todo) => todo.id !== id)
     );
   };
+
+{/*  decides what to display  */}
   const filteredTodos = todos.filter((todo) => {
   if (filter === "done") {
     return todo.done === true;
@@ -49,7 +51,7 @@ const handleToggleDone = (id) => {
 });
   return (
     <div>
-      {filteredTodos.map((todo) => (
+      {filteredTodos.map((todo,index) => (
         <div
           key={todo.id}
           className="border-b border-cyan-300 mx-50 p-3"
@@ -84,7 +86,7 @@ const handleToggleDone = (id) => {
                    <div className="w-7 h-7 outline-2 outline-cyan-300"></div>
                  )}
                </span>
-             
+                <span>NOTE #{index + 1}</span>
                <span className={todo.done ? "line-through" : ""}>
                  {todo.note}
                </span>
