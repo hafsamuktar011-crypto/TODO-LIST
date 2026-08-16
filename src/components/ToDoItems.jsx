@@ -6,6 +6,7 @@ function ToDoItems({ todos, setTodos ,filter,search}) {
   const [editingId, setEditingId] = useState(null);
   const [editNote, setEditNote] = useState("");
 
+  {/*function*/} 
   const handleEdit = (todo) => {
     setEditingId(todo.id);
     setEditNote(todo.note);
@@ -37,7 +38,7 @@ const handleToggleDone = (id) => {
     );
   };
 
-{/*  decides what to display  */}
+{/*  decides what to display and filtering  */}
  const filteredTodos = todos.filter((todo) => {
   const matchesSearch = todo.note
     .toLowerCase()
@@ -50,6 +51,7 @@ const handleToggleDone = (id) => {
 
   return matchesSearch && matchesFilter;
 });
+  {/*render*/}
 
   return (
     <div>
