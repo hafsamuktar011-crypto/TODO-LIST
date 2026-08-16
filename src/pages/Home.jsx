@@ -46,10 +46,12 @@ function Home() {
         brightMode={brightMode}
       />
 
-      <ToDoItems todos={todos} 
-      setTodos={setTodos}
-       filter={filter}
-      />
+      <ToDoItems
+         todos={todos}
+         setTodos={setTodos}
+         filter={filter}
+         search={search}
+       />
     </div>
   );
 }
