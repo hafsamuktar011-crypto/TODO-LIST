@@ -28,7 +28,7 @@ const handleToggleDone = (id) => {
           : todo
       )
     );
-    setEditingId();
+    setEditingId(null);
   };
 
   const handleDelete = (id) => {
