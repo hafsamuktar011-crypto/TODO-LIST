@@ -11,12 +11,26 @@ const connection=mysql.createConnection({
     password:"",
     port:3306
    })
+   
 connection.connect((err)=>{
     if(err){
         console.log("MySQL connection failed:",err.message)
         return
     }
+
+    console.log("Connected to MySQL");
+    
+    connection.query("CREATE DATABASE IF NOT EXISTS todolist",(err)=>{
+    if(err){
+        console.log("Error creating database:",err.message);
+        return
+        
+    }
+    console.log("Database todolist is ready")
 })
+
+})
+
 
 
 server.listen(1000,(err)=>{
